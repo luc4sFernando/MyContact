@@ -1,0 +1,32 @@
+<%- include('includes/head'); %>
+<%- include('includes/nav'); %>
+
+<section class="container">
+ 
+
+  <form action="/login/login" method="POST" class="form-vertical login-form">
+  
+    <h1>Login</h1>
+    <p>Preencha os campos para acessar sua agenda</p>
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    
+    <input type="text" name="email" placeholder="Email">
+   
+    <input type="password" name="senha" placeholder="Senha">
+    <button>Entrar</button>
+    <%- include('includes/flashs'); %>
+
+  </form>
+
+</section>
+
+<div class="modal-wrapper">
+
+<div class="modal">
+<button class="btn-exit">X</button>
+<p>Email ou senha inválida, por favor tente novamente!</p>
+</div>
+
+</div>
+
+<%- include('includes/footer'); %>

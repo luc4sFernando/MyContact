@@ -1,0 +1,20 @@
+<header class="navbar-container">
+        <% if(user){ %>
+   <a href="/agenda"><h2>MyContact</h2></a> 
+   <% } else { %>
+        <a href="/"><h2>MyContact</h2></a> 
+        <% } %>
+        
+   <ul class="nav-links">
+   
+   <% if(user){ %>
+    <li><a href="/contato/index"class="btn1">Cadastrar Contanto</a></li>
+    <li><a href="/agenda">Agenda</a></li>
+            <li><a href="/login/logout">Sair</a></li>
+            
+    <% } else { %>
+        
+    <% } %>
+       
+    </ul>
+</header>

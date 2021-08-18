@@ -1,0 +1,17 @@
+<% if(error.length > 0){ %>
+    <div class="log-erro">
+    <%  error.forEach(e => { %>
+    <p><%=  e  %> </p>
+    <% }) %>
+    </div>
+   <% } %> 
+   
+
+  
+ <% if(success){ %>
+      <div class="log-success">
+      <%  success.forEach(e => { %>
+      <p><%=  e  %> </p>
+      <% }) %>
+      </div>
+ <% } %> 

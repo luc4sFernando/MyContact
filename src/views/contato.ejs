@@ -1,0 +1,35 @@
+<%- include('includes/head'); %>
+<%- include('includes/nav'); %>
+
+<section class="container">
+ 
+  <% if(contato.id){ %>
+    <form action="/contato/edit/<%= contato._id %>" method="POST" class="form-vertical">
+      <%- include('includes/flashs'); %>
+      <h1>Editar</h1>
+      <%} else{ %>
+      <form action="/contato/register" method="POST" class="form-vertical">
+        <%- include('includes/flashs'); %>
+        <h1>Cadastrar</h1>
+      <%}%>
+  
+    
+    <p>Preencha os campos para criar sua conta</p>
+    <input type="hidden"  name="_csrf" value="<%= csrfToken %>">
+    <label>Nome</label>
+    <input type="text" value="<%= contato.nome %>" name="nome" placeholder="Nome">
+    <label>Telefone</label>
+    <input type="tel" name="tel"value="<%= contato.tel %>" placeholder="Telefone">
+    <label>Aniversário</label>
+    <input type="date" name="date" value="<%= contato.date %>">
+    <label>Email</label>
+    <input type="email" name="email" placeholder="Email" value="<%= contato.email %>">
+
+    <button>Enviar</button>
+   
+   
+  </form>
+ 
+</section>
+
+<%- include('includes/footer'); %>

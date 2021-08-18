@@ -1,0 +1,36 @@
+<%- include('includes/head'); %>
+<%- include('includes/nav'); %>
+
+
+<section class="table-first">
+ 
+<table class="notes">
+   <tr class="trow">
+       <th>Nome</th>
+       <th>Telefone</th>
+       <th>Aniversário</th>
+       <th>Email</th>
+       <th>Edit</th>
+       <th>Excluir</th>
+   </tr>
+ <%contatos.forEach(contatos =>{ %>
+
+    <tr class="trow">
+        <td><%=contatos.nome%></td>
+        <td><%=contatos.tel%></td>
+        <td><%=contatos.date%></td>
+        <td><%=contatos.email%></td>
+        <td><a href="/contato/index/<%= contatos.id %>" class="btn">Editar</a></td>
+        <td><a href="/contato/delete/<%= contatos.id %>" class="btn0">Excluir</a></td>
+    </tr>  
+ <%})%>
+  
+  
+    
+
+</table>
+  
+</section>
+
+
+<%- include('includes/footer'); %>

@@ -1,0 +1,25 @@
+<%- include('includes/head'); %>
+<%- include('includes/nav'); %>
+
+<section class="container">
+ 
+ 
+
+  <form action="/cadastro/register" method="POST" class="form-vertical">
+    <h1>Cadastrar</h1>
+    <p>Preencha os campos para criar sua conta</p>
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    
+    <input type="text" name="email" placeholder="Email">
+   
+    <input type="password" name="senha" placeholder="Senha">
+
+    
+    <button>Entrar</button>
+    <p>Se ja possui cadastro, <a href="/login/index">Logar!</a></p>
+    <%- include('includes/flashs'); %>
+  </form>
+ 
+</section>
+
+<%- include('includes/footer'); %>
